@@ -99,4 +99,5 @@ fc <- forecast(fit,
                  fourier(ts(training, frequency=30.4), K=1, h=1504),
                  fourier(ts(training, frequency=365), K=3, h=1504)))
 plot(fc)
-plot(tail(fc$mean, 29))
+plot(seq(ISOdate(2020,2,1), ISOdate(2020,2,29), "days"), tail(fc$mean, 29), xlab='Day', ylab='Price', main='Feb 2020 Forecast')
+  
